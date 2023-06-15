@@ -7,12 +7,20 @@
 <body>
     <div class="form">
     <p>Admin Login</p>
-    <form>
-        <input type="text" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="password">
-        <button>login</button>
+    <form id="frm">
+        <div class="text-small form-alert"></div>
+        <input type="text" name="email" placeholder="email" id="emailId">
+        <input type="password" name="password" placeholder="password" id="pId">
+        <button id="logInBtn">login</button>
     </form>
     </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./adminLoginLogic.js"></script>
 </body>
 </html>
       

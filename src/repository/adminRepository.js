@@ -1,10 +1,10 @@
-const { User } = require('../models/index');
+const { Admin } = require('../models/index');
 
-class UserRepository{
+class AdminRepository{
 
     async create(data){
         try {
-            const user = await User.create(data);
+            const user = await Admin.create(data);
             return user;
         } catch (error) {
             console.log("Something went wrong in repo layer");
@@ -13,23 +13,11 @@ class UserRepository{
         }
     }
 
-    async getById(userId){
+    async getAdminByEmail(adminMail){
         try {
-            const user = await User.findByPk(userId,{
-                attributes : ['email', 'id']
-            });
-            return user;
-        } catch (error) {
-            console.log("Something went wrong on repository layer");
-            throw error;
-        }
-    }
-
-    async getUserByEmail(userEmail){
-        try {
-            const user = await User.findOne({
+            const user = await Admin.findOne({
                 where : {
-                    email : userEmail
+                    email : adminMail
                 }
             });
             if(!user){
@@ -39,9 +27,9 @@ class UserRepository{
                 //     'Please check email, as there is no record of the email',
                 //     StatusCodes.NOT_FOUND
                 // )
-                console.log("user with given email not found");
+                console.log("admin with given email not found");
                 throw new error(
-                    "user not found"
+                    "admin not found"
                 )
             }
             return user;
@@ -53,4 +41,4 @@ class UserRepository{
     }
 }
 
-module.exports = UserRepository
+module.exports = AdminRepository

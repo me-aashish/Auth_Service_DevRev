@@ -83,3 +83,35 @@ body{
     margin-top: 10%;
     
 }
+
+.form-alert {
+    color: rgb(94, 3, 3);
+    letter-spacing: var(--letterSpacing);
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    display: none;
+}
+
+.alert {
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 1rem;
+    border-color: transparent;
+    border-radius: 0.25rem;
+}
+  
+.alert-danger {
+    color: rgb(94, 3, 3);
+    background: rgb(236, 109, 109);
+}
+.alert-success {
+    color: rgb(3, 59, 31);
+    background: rgb(95, 230, 95);
+}
+
+.text-success {
+    color: rgb(3, 59, 31);
+  }
+  
+
+  

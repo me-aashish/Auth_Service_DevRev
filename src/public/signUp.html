@@ -7,13 +7,20 @@
 <body>
     <div class="form">
     <p>Sign Up</p>
-    <form>
-        <input type="text" name="name" placeholder="name">
-        <input type="text" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="password">
-        <button>Signup</button>
+    <form id="frm">
+        <div class="text-small form-alert">there was an error</div>
+        <input type="text" name="email" id="emailId" placeholder="email">
+        <input type="password" name="password" id="pId" placeholder="password">
+        <button id="signupBtn">Signup</button>
     </form>
     </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./signUpLogic.js"></script>
 </body>
 </html>
       

@@ -1,24 +1,24 @@
-const UserRepository = require('../repository/userRepository');
-const userRepoObj = new UserRepository();
+const AdminRepository = require('../repository/adminRepository');
+const adminRepoObj = new AdminRepository();
 const jwt = require('jsonwebtoken');
 const { JWT_KEY } = require('../config/serverConfig');
 const bcrypt = require('bcrypt');
 
-class UserService{
+class AdminService{
 
     async create(data){
         try {
-            const user = await userRepoObj.create(data);
-            return user;
+            const admin = await adminRepoObj.create(data);
+            return admin;
         } catch (error) {
             console.log("Something went wrong in service layer");
             throw error;
         }
     }
 
-    createToken(user){
+    createToken(admin){
         try {
-            const response = jwt.sign(user,JWT_KEY, {expiresIn:'1h'});
+            const response = jwt.sign(admin,JWT_KEY, {expiresIn:'1h'});
             return response;
         } catch (error) {
             console.log('Something went wrong in token creation');
@@ -34,26 +34,26 @@ class UserService{
         }
     }
 
-    async isAuthenticated(token){
-        try {
-             const response = this.verifyToken(token);
-             if(!response){
-                 throw {error: "Invalid token"};
-             }
+    // async isAuthenticated(token){
+    //     try {
+    //          const response = this.verifyToken(token);
+    //          if(!response){
+    //              throw {error: "Invalid token"};
+    //          }
  
-             const user = await userRepoObj.getById(response.id);
+    //          const admin = await adminRepoObj.getById(response.id);
  
-             if(!user){
-                 throw {error: "no user with given token exists"};
-             }
+    //          if(!user){
+    //              throw {error: "no user with given token exists"};
+    //          }
  
-             return user.id
-        } catch (error) {
-            console.log("something went wrong in auth process");
-            throw error;
-        }
+    //          return user.id
+    //     } catch (error) {
+    //         console.log("something went wrong in auth process");
+    //         throw error;
+    //     }
  
-    }
+    // }
 
     comparePassword(plainPassword , encryptedPassword){
         try {
@@ -67,10 +67,10 @@ class UserService{
     async signIn(email , password){
         try {
              // step 1 -> fetch the user using email
-             const user = await userRepoObj.getUserByEmail(email);
+             const admin = await adminRepoObj.getAdminByEmail(email);
              
              // step 2 -> compare incoming plain password with the stored encrypted password
-             const passwordsMatch = this.comparePassword(password,user.password);
+             const passwordsMatch = this.comparePassword(password,admin.password);
              
              if(!passwordsMatch){
                  console.log("Password doesn't match");
@@ -78,7 +78,7 @@ class UserService{
              }
  
              // if password matches then create a token and send it to the user
-             const newJWT = this.createToken({email : user.email, id : user.id});
+             const newJWT = this.createToken({email : admin.email, id : admin.id});
              return newJWT;
         } catch (error) {
             throw error;
@@ -90,4 +90,4 @@ class UserService{
  
 }
 
-module.exports = UserService
+module.exports = AdminService

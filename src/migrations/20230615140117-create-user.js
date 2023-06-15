@@ -1,4 +1,7 @@
 'use strict';
+
+const { up } = require('./20230615163812-create-admin');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -13,7 +16,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
-        isEmail : true
+        validate:{
+          isEmail : true
+        }
       },
       password: {
         type: Sequelize.STRING,
@@ -34,5 +39,8 @@ module.exports = {
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Users');
-  }
+  },
+
+ 
+ 
 };

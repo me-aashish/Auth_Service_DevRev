@@ -13,12 +13,18 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
+
+  const {SALT} = require('../config/serverConfig');
+  const bcrypt = require('bcrypt');
+
   Admin.init({
     email:{
       type:DataTypes.STRING,
       allowNull:false,
       unique: true,
-      isEmail : true
+      validate:{
+        isEmail : true
+      }
     },
     password: {
       type:DataTypes.STRING,
@@ -31,5 +37,11 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Admin',
   });
+ 
+  Admin.beforeCreate( (user) => {
+    const encryptedPassword = bcrypt.hashSync(user.password,SALT);
+    user.password = encryptedPassword;
+  });
+
   return Admin;
 };
