@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
+  const {SALT} = require('../config/serverConfig');
+  const bcrypt = require('bcrypt');
   User.init({
     email:{
       type:DataTypes.STRING,
@@ -31,5 +33,11 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
   });
+
+  User.beforeCreate( (user) => {
+    const encryptedPassword = bcrypt.hashSync(user.password,SALT);
+    user.password = encryptedPassword;
+  });
+  
   return User;
 };
