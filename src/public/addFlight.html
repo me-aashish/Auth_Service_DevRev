@@ -6,12 +6,14 @@
 </head>
 <body>
     <div class="form">
-    <p>Sign Up</p>
+    <p>Add Flight</p>
     <form id="frm">
         <div class="text-small form-alert">there was an error</div>
-        <input type="text" name="email" id="emailId" placeholder="email">
-        <input type="password" name="password" id="pId" placeholder="password">
-        <button id="signupBtn">Signup</button>
+        <input type="text"  id="flightNumber" placeholder="Flight Number">
+        <input type="text" id="dprtCity" placeholder="Departure City">
+        <input type="text" id="arvlCity" placeholder="Arrival City">
+        <input type="price" id="price" placeholder="Price">
+        <button id="addBtn">Add Flight</button>
     </form>
     </div>
     <script
@@ -20,7 +22,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
-  <script src="./signUpLogic.js"></script>
+  <script src="./addFlightLogic.js"></script>
 </body>
 </html>
       

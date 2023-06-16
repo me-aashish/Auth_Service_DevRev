@@ -37,14 +37,4 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Admins');
   },
-
-  up: (queryInterface, Sequelize) => {
-    return Promise.all([
-        queryInterface.changeColumn('Admins', 'email', {
-            validate:{
-              isEmail:true
-            }
-        },)
-    ])
-},
 };

@@ -114,4 +114,34 @@ body{
   }
   
 
+  #flight-dates {
+    display: flex;
+    border-bottom: 1px dotted silver;
+  }
+  
+  .info-box {
+    padding: 10px 0;
+    margin-top: 20px;
+    flex: 1;
+    border-right: 20px solid transparent;
+  }
+  .info-box:last-child {
+    border-right: none;
+  }
+  .info-box label {
+    display: block;
+    color: #6B6A6A;
+    font-size: .9em;
+  }
+  .info-box input[type=text], input[type=submit], select {
+    border: none;
+    outline: none;
+    background: #E2E0E0;
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+    height: 30px;
+    border-radius: 3px;
+  }
+  
   

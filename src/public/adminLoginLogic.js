@@ -11,37 +11,46 @@ logInBtn.addEventListener('click', async(e) => {
     const email = inputEmailDOM.value;
     const password = inputPasswordDOM.value;
 
+    if(email === "" || password == ""){
+        formAlertDOM.style.display = 'block';
+        formAlertDOM.textContent = "Please enter email and password";
+        // setTimeout(() => {
+        //     formAlertDOM.style.display = 'none',
+        //     location.reload()
+        // }, 4000)
+    }
+
+    else{
+        try {
+            const { data } = await axios.post('http://localhost:3000/api/v1/adminSignin',{
+                
+                email : email,
+                password : password
+               
+                
+            })
+            console.log(data.data);
+            // formAlertDOM.style.display = 'block'
+            // formAlertDOM.textContent = data.message
     
-
-    try {
-        const { data } = await axios.post('http://localhost:3000/api/v1/adminSignin',{
+            // formAlertDOM.classList.add('text-success')
+            // usernameInputDOM.value = ''
+            // passwordInputDOM.value = ''
+            if(data.success){
+                window.location.replace('./adminLandingPage.html');
+                localStorage.setItem('x-access-token', data.data);
+            }
+    
+        } catch (error) {
+            // throw error;
+            // console.log(error.response);
+            // console.log(error.response.data.message.err);
+            formAlertDOM.style.display = 'block'
             
-            email : email,
-            password : password
-           
+            formAlertDOM.textContent = "Incorrect email or password for admin";
             
-        })
-        console.log(data.data);
-        // formAlertDOM.style.display = 'block'
-        // formAlertDOM.textContent = data.message
-
-        // formAlertDOM.classList.add('text-success')
-        // usernameInputDOM.value = ''
-        // passwordInputDOM.value = ''
-        if(data.success){
-            window.location.replace('./adminLandingPage.html');
-            localStorage.setItem('x-access-token', data.data);
+            
         }
-
-    } catch (error) {
-        // throw error;
-        // console.log(error.response);
-        // console.log(error.response.data.message.err);
-        formAlertDOM.style.display = 'block'
-        
-        formAlertDOM.textContent = "Incorrect email or password for admin";
-        
-        
     }
 
     setTimeout(() => {

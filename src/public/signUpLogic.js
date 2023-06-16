@@ -10,8 +10,14 @@ singupButton.addEventListener('click', async(e) => {
     
     const email = inputEmailDOM.value;
     const password = inputPasswordDOM.value;
+    
+    if(email === "" || password == ""){
+        formAlertDOM.style.display = 'block';
+        formAlertDOM.textContent = "Please enter email and password";
+    }
 
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    else{
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if(!email.match(mailformat)){
         formAlertDOM.style.display = 'block'
@@ -44,7 +50,8 @@ singupButton.addEventListener('click', async(e) => {
             }
             else formAlertDOM.textContent = error.response.data.err.errors[0].message;
         }
-   }
+    }
+}
 
     setTimeout(() => {
         formAlertDOM.style.display = 'none',
