@@ -1,7 +1,7 @@
 # Flight Booking Task
 
 ## To set up the poject do following things :-
-===
+
     clone project on your local.
     execute `npm install` on the same path as the root directory of your downloaded project to install dependencies and       packages
     - create `.env` file in your root directory of the project and add following environment variables-
