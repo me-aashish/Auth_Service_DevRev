@@ -4,8 +4,6 @@ const {PORT} = require('./config/serverConfig');
 const bodyParser = require('body-parser');
 const apiRoutes = require('./routes/index');
 const cors = require("cors");
-const UserService = require('./services/userService');
-const obj = new UserService();
 
 const setUpAndStartServer = async() =>{
     app.use(express.static(__dirname + '/public'));
