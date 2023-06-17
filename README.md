@@ -1,8 +1,8 @@
 # Flight Booking Task
 
 ## To set up the poject do following things :-
-=======
-    - clone project on your local
+=
+    - clone project on your local.
     - execute `npm install` on the same path as the root directory of your downloaded project to install dependencies and       packages
     - create `.env` file in your root directory of the project and add following environment variables-
        - `PORT = 3000`
@@ -26,7 +26,7 @@
 
 #### Disclaimer :-
 =======
-    - some of the minor features have not been implemented and some small bugs are there in the project.
-    - these small bugs will be removed in near future or could have been removed if more time was alloted.
-    - similarly some minor features could have also been added if more time was alloted,
-    - second backend task of 'Covid App' is very similar to this 'Flight Booking App' and can be made similarly the way this    project has been made.
+    - some of the minor features have not been implemented and some small bugs are there in the project
+    - these small bugs will be removed in near future or could have been removed if more time was alloted
+    - similarly some minor features could have also been added if more time was alloted
+    - second backend task of 'Covid App' is very similar to this 'Flight Booking App' and can be made similarly the way this    project has been made
