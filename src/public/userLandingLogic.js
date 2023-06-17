@@ -1,5 +1,6 @@
 const list = document.getElementById('list');
 const bookingBtn = document.getElementById('bookingsBtn');
+const logOutBtn = document.getElementById('logOutBtn');
 const mainDiv = document.getElementById('mainDiv');
 mainDiv.style.display = 'none';
 
@@ -41,4 +42,10 @@ bookingBtn.addEventListener('click', async(e) => {
     } catch (error) {
         console.log(error.response);
     }
+})
+
+logOutBtn.addEventListener('click', e => {
+    e.preventDefault();
+    localStorage.removeItem('x-access-token');
+    window.location.replace('./index.html')
 })
