@@ -21,7 +21,6 @@
     ``` 
     - Once you have done all the above steps, run `npx sequelize db:create` in your shell to create the databse. 
       and then run `npx sequelize db:migrate` 
-    
     - after doing all the above mentioned steps, execute `node src/index.js` or `npm start` if you have start key under scripts element in package.json file to spin up the project and server
 
 
