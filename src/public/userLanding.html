@@ -4,11 +4,21 @@
   <link rel="stylesheet" href="./buttonsCSS.css">
 </head>
 <body>
-  <ul>
-    <li><span><a href="./flightSearch.html" style="text-decoration: none">Search Flights</a></span></li>
-    <li><span>Book Flight</span></li>
-    <li><span>My Bookings</span></li>
+  <ul id="list">
+    <li><span><a href="./newFlightSearch.html" style="text-decoration: none">Search Flights</a></span></li>
+    <li><span onclick="alert('first search the flight')" >Book Flight</span></li>
+    <li id="bookingsBtn"><span> My Bookings</span></li>
     <li><span>Log Out</span></li>
   </ul>
+  <div id="mainDiv">
+    <h1>My Bookings</h1>
+  </div>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./userLandingLogic.js"></script>
 </body>
 </html>

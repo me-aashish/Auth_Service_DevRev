@@ -30,6 +30,7 @@ class UserService{
             const response = jwt.verify(token,JWT_KEY);
             return response;
         } catch (error) {
+            console.log(error.name);
             console.log('Something went wrong in token verification');
         }
     }

@@ -4,10 +4,20 @@
   <link rel="stylesheet" href="./buttonsCSS.css">
 </head>
 <body>
-  <ul>
+  <ul id="list">
     <li><span> <a href="./addFlight.html">Add Flights</a></span></li>
     <li><span> <a href="./removeFlight.html">Remove Flight</a> </span></li>
-    <li><span>View Bookings</span></li>
+    <li id="showbookingBtn"><span>View Bookings</span></li>
   </ul>
+  <div id="mainDiv">
+    <h1>All Bookings</h1>
+  </div>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./adminLandingLogic.js"></script>
 </body>
 </html>
