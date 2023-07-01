@@ -30,3 +30,4 @@ create `.env` file in your root directory of the project and add following envir
 - these small bugs will be removed in near future or could have been removed if more time was alloted
 - similarly some minor features could have also been added if more time was alloted
 - second backend task of 'Covid App' is very similar to this 'Flight Booking App' and can be made similarly the way this    project has been made
+- Id and password for testing admin functionality is : email - `admin2@devrev.com` , password - `123456789`
